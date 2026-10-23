@@ -3,6 +3,7 @@ Incluye a propósito un duplicado, un dato tardío aceptado y un dato tardío de
 import json
 import os
 import shutil
+import time
 
 LOTES = {
     "lote_01": [("E1", "EST-A", "12:01", 20), ("E2", "EST-A", "12:03", 30), ("E3", "EST-B", "12:02", 10)],
@@ -17,9 +18,13 @@ LOTES = {
 
 shutil.rmtree("eventos", ignore_errors=True)
 os.makedirs("eventos")
-for nombre, eventos in LOTES.items():
-    with open(f"eventos/{nombre}.json", "w") as f:
+# Spark lee los archivos en orden de fecha de modificación: se separan un segundo para fijar ese orden
+inicio = time.time() - 60
+for i, (nombre, eventos) in enumerate(LOTES.items()):
+    ruta = f"eventos/{nombre}.json"
+    with open(ruta, "w") as f:
         for id_evento, estacion, hora, pm25 in eventos:
             f.write(json.dumps({"id_evento": id_evento, "id_estacion": estacion,
                                 "hora_evento": f"2026-10-14 {hora}:00", "pm25": pm25}) + "\n")
+    os.utime(ruta, (inicio + i, inicio + i))
 print("Lotes generados:", ", ".join(LOTES))

@@ -63,7 +63,7 @@ El script ejecuta los laboratorios desde cero y compara el resultado con `salida
 
 ## Cómo citar
 
-Alvarez Caballero, H. D. (2026). *Laboratorios de Big Data I* (Versión 1.0) [Software]. GitHub. https://github.com/hernandavidc/bigdata-i-laboratorios
+Alvarez Caballero, H. D. (2026). *Laboratorios de Big Data I* (Versión 1.0.1) [Software]. GitHub. https://github.com/hernandavidc/bigdata-i-laboratorios
 
 ## Licencia
 
