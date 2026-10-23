@@ -1,0 +1,3 @@
+2026-10-23 17:02:31,810 INFO calidad_aire: filas crudas=499 limpias=499
+2026-10-23 17:02:31,810 ERROR calidad_aire: volumen insuficiente: 499 < 1000; no se publica
+código de salida: 1

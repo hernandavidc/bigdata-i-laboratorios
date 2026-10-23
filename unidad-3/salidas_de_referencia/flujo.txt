@@ -1,0 +1,19 @@
+Lotes generados: lote_01, lote_02, lote_03, lote_04, lote_05
+micro-lote 0: filas leídas=3, marca de agua=00:00, descartadas por tardías=0
+micro-lote 1: filas leídas=4, marca de agua=11:53, descartadas por tardías=0
+micro-lote 2: filas leídas=2, marca de agua=11:58, descartadas por tardías=0
+micro-lote 3: filas leídas=1, marca de agua=12:06, descartadas por tardías=0
+micro-lote 4: filas leídas=2, marca de agua=12:17, descartadas por tardías=1
+micro-lote 5: filas leídas=0, marca de agua=12:31, descartadas por tardías=0
++------+-----+-----------+-------------+--------+
+|inicio|  fin|id_estacion|pm25_promedio|lecturas|
++------+-----+-----------+-------------+--------+
+| 12:00|12:05|      EST-A|         25.0|       2|
+| 12:00|12:05|      EST-B|         25.0|       2|
+| 12:05|12:10|      EST-A|         40.0|       1|
+| 12:05|12:10|      EST-B|         20.0|       1|
+| 12:10|12:15|      EST-A|         50.0|       1|
+| 12:15|12:20|      EST-B|         30.0|       1|
+| 12:25|12:30|      EST-A|         10.0|       1|
++------+-----+-----------+-------------+--------+
+

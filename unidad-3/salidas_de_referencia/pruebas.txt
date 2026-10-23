@@ -1,0 +1,3 @@
+test_transformaciones.py::test_limpiar_descarta_invalidos_y_duplicados PASSED [ 50%]
+test_transformaciones.py::test_resumir_calcula_promedio_maximo_y_conteo PASSED [100%]
+============================== 2 passed in 14.00s ==============================

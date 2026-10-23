@@ -1,0 +1,4 @@
+2026-10-23 17:02:14,550 WARNING calidad_aire: filas corruptas enviadas a cuarentena: 1
+2026-10-23 17:02:16,220 INFO calidad_aire: filas crudas=1471 limpias=1440
+2026-10-23 17:02:19,407 INFO calidad_aire: publicado en datos/consumo/calidad_aire_diaria
+código de salida: 0

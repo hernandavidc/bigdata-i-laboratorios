@@ -1,0 +1,39 @@
+Archivo generado con 1470 filas
+root
+ |-- id_estacion: string (nullable = true)
+ |-- fecha_hora: timestamp (nullable = true)
+ |-- pm25: double (nullable = true)
+
+Filas crudas: 1470
+Filas con valores válidos: 1460
+Filas sin duplicados: 1440
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- Sort [fecha#64 ASC NULLS FIRST, id_estacion#0 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(fecha#64 ASC NULLS FIRST, id_estacion#0 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=206]
+      +- HashAggregate(keys=[fecha#64, id_estacion#0], functions=[avg(pm25#62), max(pm25#62), count(1)])
+         +- Exchange hashpartitioning(fecha#64, id_estacion#0, 200), ENSURE_REQUIREMENTS, [plan_id=203]
+            +- HashAggregate(keys=[fecha#64, id_estacion#0], functions=[partial_avg(pm25#62), partial_max(pm25#62), partial_count(1)])
+               +- HashAggregate(keys=[id_estacion#0, fecha_hora#1], functions=[first(pm25#2, false), first(fecha#15, false)])
+                  +- Exchange hashpartitioning(id_estacion#0, fecha_hora#1, 200), ENSURE_REQUIREMENTS, [plan_id=199]
+                     +- HashAggregate(keys=[id_estacion#0, fecha_hora#1], functions=[partial_first(pm25#2, false), partial_first(fecha#15, false)])
+                        +- Project [id_estacion#0, fecha_hora#1, pm25#2, cast(fecha_hora#1 as date) AS fecha#15]
+                           +- Filter ((isnotnull(pm25#2) AND (pm25#2 >= 0.0)) AND (pm25#2 <= 1000.0))
+                              +- FileScan csv [id_estacion#0,fecha_hora#1,pm25#2] Batched: false, DataFilters: [isnotnull(pm25#2), (pm25#2 >= 0.0), (pm25#2 <= 1000.0)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/work/datos/crudo/calidad_aire], PartitionFilters: [], PushedFilters: [IsNotNull(pm25), GreaterThanOrEqual(pm25,0.0), LessThanOrEqual(pm25,1000.0)], ReadSchema: struct<id_estacion:string,fecha_hora:timestamp,pm25:double>
+
+
++-----------+-------------+-----------+--------+----------+
+|id_estacion|pm25_promedio|pm25_maximo|lecturas|     fecha|
++-----------+-------------+-----------+--------+----------+
+|     EST-01|         21.0|       43.3|     144|2026-10-13|
+|     EST-02|         22.4|       48.9|     144|2026-10-13|
+|     EST-03|         22.9|       43.4|     144|2026-10-13|
+|     EST-04|         21.7|       37.4|     144|2026-10-13|
+|     EST-05|         22.2|       45.0|     144|2026-10-13|
+|     EST-01|         22.0|       41.7|     144|2026-10-14|
+|     EST-02|         23.2|       45.8|     144|2026-10-14|
+|     EST-03|         21.3|       43.5|     144|2026-10-14|
+|     EST-04|         22.5|       43.1|     144|2026-10-14|
+|     EST-05|         22.7|       41.1|     144|2026-10-14|
++-----------+-------------+-----------+--------+----------+
+

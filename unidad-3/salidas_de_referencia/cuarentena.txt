@@ -1,0 +1,1 @@
+{"id_estacion":"EST-03","_registro_corrupto":"EST-03,no-es-una-fecha,abc"}

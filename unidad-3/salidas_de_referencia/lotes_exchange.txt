@@ -1,0 +1,3 @@
+   +- Exchange rangepartitioning(fecha ASC NULLS FIRST, id_estacion ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, 
+         +- Exchange hashpartitioning(fecha, id_estacion, 200), ENSURE_REQUIREMENTS, 
+                  +- Exchange hashpartitioning(id_estacion, fecha_hora, 200), ENSURE_REQUIREMENTS, 
