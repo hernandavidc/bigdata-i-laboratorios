@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Si usas este material, cítalo así."
+title: "Laboratorios de Big Data I"
+type: software
+authors:
+  - family-names: "Alvarez Caballero"
+    given-names: "Hernan David"
+version: "1.0"
+date-released: "2026-10-23"
+repository-code: "https://github.com/hernandavidc/bigdata-i-laboratorios"

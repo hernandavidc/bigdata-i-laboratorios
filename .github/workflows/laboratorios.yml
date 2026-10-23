@@ -1,0 +1,17 @@
+name: Laboratorios
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unidad-3:
+    runs-on: ubuntu-latest
+    container:
+      image: spark:3.5.3-python3
+      options: --user root
+    steps:
+      - uses: actions/checkout@v5
+      - name: Ejecutar los laboratorios y comparar con las salidas de la guía
+        run: bash unidad-3/verificar.sh
