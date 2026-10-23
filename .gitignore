@@ -1,0 +1,16 @@
+# Datos y resultados que generan los laboratorios (se recrean al ejecutarlos)
+datos/
+eventos/
+checkpoints/
+salidas/
+salidas_verificacion/
+spark-warehouse/
+metastore_db/
+derby.log
+__pycache__/
+.pytest_cache/
+
+# Material exclusivo del docente: nunca se publica
+*SOLUCION*
+*Solucion*
+*solucion*

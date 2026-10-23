@@ -1,0 +1,7 @@
+# Finales de línea de Linux: los scripts se ejecutan dentro del contenedor de Spark
+*.sh  text eol=lf
+*.py  text eol=lf
+*.txt text eol=lf
+*.md  text eol=lf
+*.yml text eol=lf
+*.cff text eol=lf
